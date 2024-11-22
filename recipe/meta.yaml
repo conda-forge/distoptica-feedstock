@@ -1,5 +1,5 @@
 {% set name = "distoptica" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/distoptica-{{ version }}.tar.gz
-  sha256: e471aa08dcc5cfba3bd711054b2be8817cef6f1c93fb127d7ce41fbed180f66d
+  sha256: 9fdf27a593c16e9535c6155c49f7a4f6ee51828fefdcc33d43bf79f6bec1fc42
 
 build:
   noarch: python
