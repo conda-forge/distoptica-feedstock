@@ -1,5 +1,5 @@
 {% set name = "distoptica" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/distoptica-{{ version }}.tar.gz
-  sha256: 46174b88110e0ce93392f5269c512f60e206b07bd0926f839a31092cd7c8e56d
+  sha256: a4aa46b57cb158d4631a657755261cbc45f07c1c922c9d1ed76acf7e6d96c1c7
 
 build:
   noarch: python
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - wheel
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - fancytypes >=1.0.0
     - pytorch
 
@@ -32,6 +32,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
